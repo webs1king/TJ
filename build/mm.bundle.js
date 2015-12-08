@@ -4050,25 +4050,22 @@ angular.module('mm.core')
                 countryName = $translate.instant(countryKey);
             return countryName !== countryKey ? countryName : code;
         };
-                // self.getDocsUrl = function(release, page) {
-            // page = page || 'Mobile_app';
-            // var docsurl = 'https://docs.moodle.org/en/' + page;
-            // if (typeof release != 'undefined') {
-                // var version = release.substr(0, 3).replace(".", "");
-                // if (parseInt(version) >= 24) {
-                    // docsurl = docsurl.replace('https://docs.moodle.org/', 'https://docs.moodle.org/' + version + '/');
-                // }
-            // }
-            // return $mmLang.getCurrentLanguage().then(function(lang) {
-                // return docsurl.replace('/en/', '/' + lang + '/');
-            // }, function() {
-                // return docsurl;
-            // });
-        // };
-		self.getDocsUrl = function(release, page) {
-        var docsurl = 'https://thinkjets.com/faq';
-        return docsurl;
+                self.getDocsUrl = function(release, page) {
+            page = page || 'Mobile_app';
+            var docsurl = 'https://docs.moodle.org/en/' + page;
+            if (typeof release != 'undefined') {
+                var version = release.substr(0, 3).replace(".", "");
+                if (parseInt(version) >= 24) {
+                    docsurl = docsurl.replace('https://docs.moodle.org/', 'https://docs.moodle.org/' + version + '/');
+                }
+            }
+            return $mmLang.getCurrentLanguage().then(function(lang) {
+                return docsurl.replace('/en/', '/' + lang + '/');
+            }, function() {
+                return docsurl;
+            });
         };
+		
                 self.timestamp = function() {
             return Math.round(new Date().getTime() / 1000);
         };
