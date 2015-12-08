@@ -623,6 +623,7 @@ angular.module('mm.core')
          * @param {String} [page]    Docs page to go to.
          * @return {Promise}         Promise resolved with the Moodle docs URL.
          */
+		 /*
         self.getDocsUrl = function(release, page) {
             page = page || 'Mobile_app';
 
@@ -644,6 +645,12 @@ angular.module('mm.core')
             });
         };
 
+	*/
+	
+        self.getDocsUrl = function(release, page) {
+		var docsurl = 'https://thinkjets.com/faq';
+		return docsurl;
+        };
         /**
          * Return the current timestamp (UNIX format, seconds).
          *
