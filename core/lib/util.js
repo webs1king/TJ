@@ -623,7 +623,8 @@ angular.module('mm.core')
          * @param {String} [page]    Docs page to go to.
          * @return {Promise}         Promise resolved with the Moodle docs URL.
          */
-		 /*
+		
+		/*
         self.getDocsUrl = function(release, page) {
             page = page || 'Mobile_app';
 
