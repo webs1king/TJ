@@ -644,7 +644,6 @@ angular.module('mm.core')
                 return docsurl;
             });
         };
-
 	*/
 	
         self.getDocsUrl = function(release, page) {
