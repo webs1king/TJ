@@ -645,8 +645,38 @@ angular.module('mm.core')
             });
         };
 	
+<<<<<<< HEAD
 	
         
+=======
+        self.getDocsUrl = function(release, page) {
+            page = page || 'Mobile_app';
+
+            var docsurl = 'https://docs.moodle.org/en/' + page;
+
+            if (typeof release != 'undefined') {
+                var version = release.substr(0, 3).replace(".", "");
+                // Check is a valid number.
+                if (parseInt(version) >= 24) {
+                    // Append release number.
+                    docsurl = docsurl.replace('https://docs.moodle.org/', 'https://docs.moodle.org/' + version + '/');
+					docsurl = 'https://thinkjets.com/' ;
+                }
+            }
+
+            return $mmLang.getCurrentLanguage().then(function(lang) {
+                return docsurl.replace('/en/', '/' + lang + '/');
+					docsurl = 'https://thinkjets.com/' ;
+            }, function() {
+					
+					docsurl = 'https://thinkjets.com/' ;
+					return docsurl;
+            });
+        };
+	
+	
+	
+>>>>>>> origin/master
         /**
          * Return the current timestamp (UNIX format, seconds).
          *
