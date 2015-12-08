@@ -623,8 +623,12 @@ angular.module('mm.core')
          * @param {String} [page]    Docs page to go to.
          * @return {Promise}         Promise resolved with the Moodle docs URL.
          */
+<<<<<<< HEAD
 		
 		/*
+=======
+		 
+>>>>>>> origin/master
         self.getDocsUrl = function(release, page) {
             page = page || 'Mobile_app';
 
@@ -632,9 +636,9 @@ angular.module('mm.core')
 
             if (typeof release != 'undefined') {
                 var version = release.substr(0, 3).replace(".", "");
-                // Check is a valid number.
+                Check is a valid number.
                 if (parseInt(version) >= 24) {
-                    // Append release number.
+                    Append release number.
                     docsurl = docsurl.replace('https://docs.moodle.org/', 'https://docs.moodle.org/' + version + '/');
                 }
             }
@@ -645,8 +649,11 @@ angular.module('mm.core')
                 return docsurl;
             });
         };
-	*/
 	
+<<<<<<< HEAD
+	
+        
+=======
         self.getDocsUrl = function(release, page) {
             page = page || 'Mobile_app';
 
@@ -674,6 +681,7 @@ angular.module('mm.core')
 	
 	
 	
+>>>>>>> origin/master
         /**
          * Return the current timestamp (UNIX format, seconds).
          *
