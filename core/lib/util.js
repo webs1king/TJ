@@ -623,37 +623,6 @@ angular.module('mm.core')
          * @param {String} [page]    Docs page to go to.
          * @return {Promise}         Promise resolved with the Moodle docs URL.
          */
-<<<<<<< HEAD
-		
-		/*
-=======
-		 
->>>>>>> origin/master
-        self.getDocsUrl = function(release, page) {
-            page = page || 'Mobile_app';
-
-            var docsurl = 'https://docs.moodle.org/en/' + page;
-
-            if (typeof release != 'undefined') {
-                var version = release.substr(0, 3).replace(".", "");
-                Check is a valid number.
-                if (parseInt(version) >= 24) {
-                    Append release number.
-                    docsurl = docsurl.replace('https://docs.moodle.org/', 'https://docs.moodle.org/' + version + '/');
-                }
-            }
-
-            return $mmLang.getCurrentLanguage().then(function(lang) {
-                return docsurl.replace('/en/', '/' + lang + '/');
-            }, function() {
-                return docsurl;
-            });
-        };
-	
-<<<<<<< HEAD
-	
-        
-=======
         self.getDocsUrl = function(release, page) {
             page = page || 'Mobile_app';
 
@@ -665,23 +634,16 @@ angular.module('mm.core')
                 if (parseInt(version) >= 24) {
                     // Append release number.
                     docsurl = docsurl.replace('https://docs.moodle.org/', 'https://docs.moodle.org/' + version + '/');
-						docsurl = 'https://thinkjets.com/' ;
                 }
             }
 
             return $mmLang.getCurrentLanguage().then(function(lang) {
                 return docsurl.replace('/en/', '/' + lang + '/');
-					docsurl = 'https://thinkjets.com/' ;
             }, function() {
-					
-					docsurl = 'https://thinkjets.com/' ;
-					return docsurl;
+                return docsurl;
             });
         };
-	
-	
-	
->>>>>>> origin/master
+
         /**
          * Return the current timestamp (UNIX format, seconds).
          *
@@ -803,44 +765,6 @@ angular.module('mm.core')
          */
         self.emptyArray = function(array) {
             array.length = 0; // Empty array without losing its reference.
-        };
-
-        /**
-         * Similar to $q.all, but if a promise fails this function's promise won't be rejected until ALL promises have finished.
-         *
-         * @module mm.core
-         * @ngdoc method
-         * @name $mmUtil#allPromises
-         * @param  {Promise[]} promises Promises.
-         * @return {Promise}            Promise resolved if all promises are resolved and rejected if at least 1 promise fails.
-         */
-        self.allPromises = function(promises) {
-            if (!promises || !promises.length) {
-                return $q.when();
-            }
-
-            var count = 0,
-                failed = false,
-                deferred = $q.defer();
-
-            angular.forEach(promises, function(promise) {
-                promise.catch(function() {
-                    failed = true;
-                }).finally(function() {
-                    count++;
-
-                    if (count === promises.length) {
-                        // All promises have finished, reject/resolve.
-                        if (failed) {
-                            deferred.reject();
-                        } else {
-                            deferred.resolve();
-                        }
-                    }
-                });
-            });
-
-            return deferred.promise;
         };
 
         return self;
