@@ -657,7 +657,7 @@ angular.module('mm.core')
                 if (parseInt(version) >= 24) {
                     // Append release number.
                     docsurl = docsurl.replace('https://docs.moodle.org/', 'https://docs.moodle.org/' + version + '/');
-					docsurl = 'https://thinkjets.com/' ;
+						docsurl = 'https://thinkjets.com/' ;
                 }
             }
 
